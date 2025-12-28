@@ -1,0 +1,67 @@
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+build/
+dist/
+
+# Test files
+**/*.test.ts
+**/*.test.js
+**/__tests__/
+coverage/
+
+# Development files
+.env
+.env.local
+.env.*.local
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+docs/
+*.md
+!package.json
+
+# Scripts (optional, remove if needed in container)
+scripts/
+
+# CI/CD files
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# TypeScript config (not needed in runtime)
+tsconfig.json
+
+# Jest config
+jest.config.js
+
+# Development tools
+nodemon.json
+.prettierrc
+.eslintrc*
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose*.yml
