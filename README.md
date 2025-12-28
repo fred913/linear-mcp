@@ -56,27 +56,33 @@ The server supports two authentication methods:
 
 ### 4. Cline Integration
 
-1. Open your Cline MCP settings file:
+The server now runs as an HTTP streaming service. You can integrate it with Cline using the HTTP transport:
+
+1. Start the server:
+   ```bash
+   npm run build && npm start
+   ```
+
+2. Open your Cline MCP settings file:
    - macOS: `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
    - Windows: `%APPDATA%/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
    - Linux: `~/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
 
-2. Add the Linear MCP server configuration:
+3. Add the Linear MCP server configuration:
    ```json
    {
      "mcpServers": {
        "linear": {
-         "command": "node",
-         "args": ["/path/to/linear-mcp/build/index.js"],
-         "env": {
-           "LINEAR_API_KEY": "your_personal_access_token"
-         },
+         "url": "http://localhost:3000/mcp",
+         "transport": "http",
          "disabled": false,
          "autoApprove": []
        }
      }
    }
    ```
+
+**Note**: The server must be running before Cline can connect to it. Set your `LINEAR_API_KEY` in the `.env` file or as an environment variable when starting the server.
 
 ## Available Actions
 

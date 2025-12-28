@@ -41,8 +41,8 @@ RUN addgroup -g 1001 -S nodejs && \
 # Switch to non-root user
 USER nodejs
 
-# Expose port (if needed for future web interface)
-# EXPOSE 3000
+# Expose port for OAuth callback and potential web interface
+EXPOSE 3000
 
 # Set environment variables
 ENV NODE_ENV=production
